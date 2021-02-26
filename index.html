@@ -26,7 +26,15 @@ e=(!e||e.length===0?"$default_instance":e).toLowerCase()
 ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
 ;e.amplitude=n})(window,document);
 
-amplitude.getInstance().init("89449299cbcd98033c404fb01fe8da74");
+//amplitude.getInstance().init("89449299cbcd98033c404fb01fe8da74");
+amplitude.getInstance().init("89449299cbcd98033c404fb01fe8da74", null, {
+    // optional configuration options
+    includeUtm: true,
+    includeReferrer: true
+})
+      
+      
+      
 </script>
 </head> 
 <body style="background-color:darkseagreen; margin: 10px; text-align:center;"> 
