@@ -1,7 +1,9 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-   <!--<script type="text/javascript">
+<!-- Amplitude SDK Snippet
+
+<script type="text/javascript">
 (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
 ;r.type="text/javascript"
 ;r.integrity="sha384-girahbTbYZ9tT03PWWj0mEVgyxtZoyDF9KVZdL+R53PP5wCY0PiVUKq0jeRlMx9M"
@@ -34,7 +36,6 @@ amplitude.getInstance().init("89449299cbcd98033c404fb01fe8da74", null, {
 }) 
       
       
-      
 </script> -->
 <script>
   !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="6fkqnfY4PXrUanMllw93lDEwK9ocXAPr";analytics.SNIPPET_VERSION="4.13.2";
@@ -65,7 +66,8 @@ amplitude.getInstance().init("89449299cbcd98033c404fb01fe8da74", null, {
     <br><br>
     <input name="submit" type="submit" value="Submit"/>
 </form>
-<script type="text/javascript">
+   
+   <script type="text/javascript">
       function identify(e){
         e.preventDefault();
         var form = e.target;
@@ -76,25 +78,70 @@ amplitude.getInstance().init("89449299cbcd98033c404fb01fe8da74", null, {
         var number = form["frequency"].value;
         var id = form["id"].value;
         var user = {
+            email: email, 
+            name: fullname, 
+            destination: destination, 
+            details: details,
+            visits: number
+        };
+        analytics.identify(id, {
+            email: email,
+            name: fullname
+        });
+        analytics.track('Ionic Test Event', user, function() {
+            window.location.href = "";
+        });
+      }
+</script>
+<script type="text/javascript">
+    function loc(e){
+        analytics.group('123SB', {
+            name: 'Ionic Test',
+            industry: 'Technology',
+            city: 'New York',
+            type: 'location_id',
+            id: '123SB'
+        });
+    }
+</script>
+   
+   
+   
+   
+   
+<!-- Amplitude Tracking
+
+<script type="text/javascript">
+      function identify(e){
+        e.preventDefault();
+        var form = e.target;
+        var email = form["email"].value;
+        var fullname = form["fullname"].value;
+        var destination = form["destination"].value;
+        var details = form["details"].value;
+        var number = form["frequency"].value;
+        var id = form["id"].value;
+        var userProperties = {
             'email': email, 
             'name': fullname
         };
-        var event = {
+        var eventProperties = {
              'destination': destination,
              'details': details,
              'frequency': number
         };
          
-        amplitude.getInstance().setUserId(id)
+      
+      amplitude.getInstance().setUserId(id)
         amplitude.getInstance().setDeviceId('123456789')
         amplitude.getInstance().setUserProperties(userProperties);
         amplitude.getInstance().logEvent('Destination Form Submitted', eventProperties, function() {
-           window.location.href = "";
+           window.location.href = ""; 
            
           
-        });
+        }); 
          
       }
-</script>
+</script> -->
 </body> 
 </html>
