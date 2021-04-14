@@ -88,13 +88,6 @@ amplitude.getInstance().init("89449299cbcd98033c404fb01fe8da74", null, {
             email: email,
             name: fullname
         });
-        analytics.track('Ionic Test Event', user, function() {
-            window.location.href = "";
-        });
-      }
-</script>
-<script type="text/javascript">
-    function loc(e){
         analytics.group('123SB', {
             name: 'Ionic Test',
             industry: 'Technology',
@@ -102,7 +95,10 @@ amplitude.getInstance().init("89449299cbcd98033c404fb01fe8da74", null, {
             type: 'location_id',
             id: '123SB'
         });
-    }
+        analytics.track('Ionic Test Event', user, function() {
+            window.location.href = "";
+        });
+      }
 </script>
    
    
