@@ -88,13 +88,13 @@ amplitude.getInstance().init("89449299cbcd98033c404fb01fe8da74", null, {
             email: email,
             name: fullname
         });
-        /*analytics.group('123SBB', {
-            name: 'Ionic Test Name V2',
-            industry: 'Ionic Test Industry',
+        analytics.group('123SBB', {
+            name: 'Company',
+            company: 'Amplitude',
             city: 'Tucson',
             type: 'location_id',
             id: '123SBB'
-        });*/
+        });
         analytics.track('Ionic Test Event', user, function() {
             window.location.href = "";
         });
