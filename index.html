@@ -88,14 +88,14 @@ amplitude.getInstance().init("89449299cbcd98033c404fb01fe8da74", null, {
             email: email,
             name: fullname
         });
-        analytics.group("123SBB1", {
-            name: "Company",
-            company: "Amplitude",
-            city: "Tucson",
+        analytics.group("12345678", {
+            teacher_name: "John Doe",
+            group_type: "Teacher",
+            district: "Tucson",
             type: "location_id",
-            id: "123SBB1"
+            teacher_id: "12345678"
         });
-        analytics.track('Ionic Test Event', user, function() {
+        analytics.track('Clever Test Event', user, function() {
             window.location.href = "";
         });
       }
