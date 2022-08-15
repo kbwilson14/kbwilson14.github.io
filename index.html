@@ -169,10 +169,13 @@ amplitude.init("89449299cbcd98033c404fb01fe8da74");
              'details': details,
              'frequency': number
         };
-         
       
       amplitude.setUserId(id)
-      amplitude.identify(userProperties);
+      const identify = new amplitude.Identify()
+      identify
+        .set ('email', email) 
+        .set ('name', fullname)
+      amplitude.identify(identify);
       amplitude.track('Destination Form Submitted', eventProperties, function() {
            window.location.href = "";   
         }); 
