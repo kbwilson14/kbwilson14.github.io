@@ -182,13 +182,13 @@ amplitude.init("89449299cbcd98033c404fb01fe8da74", null, {
              'frequency': number
         };
       
-      setUserId(id)
-      const identify = new Identify();
+      amplitude.setUserId(id)
+      const identify = new amplitude.Identify()
       identify
         .set ('email', email) 
         .set ('name', fullname)
-      identify(identify);
-      track('Destination Form Submitted', eventProperties); 
+      amplitude.identify(identify);
+      amplitude.track('Destination Form Submitted', eventProperties); 
          
       }
 </script> 
