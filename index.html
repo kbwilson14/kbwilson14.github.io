@@ -188,8 +188,9 @@ amplitude.init("89449299cbcd98033c404fb01fe8da74", null, {
         .set ('email', email) 
         .set ('name', fullname)
       amplitude.identify(identify);
-      amplitude.track('Destination Form Submitted', eventProperties); 
-         
+      amplitude.track('Destination Form Submitted', eventProperties, function() {
+            window.location.href = "";
+        }); 
       }
 </script> 
 </body> 
