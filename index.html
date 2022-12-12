@@ -190,9 +190,7 @@ amplitude.init("425d49f3bf1a9dcb8785f279c18e7409", null {
         .set ('email', email) 
         .set ('name', fullname)
       amplitude.identify(identify);
-      amplitude.track('Destination Form Submitted', eventProperties, function() {
-           window.location.href = "";   
-        }); 
+      amplitude.logEvent('Destination Form Submitted', eventProperties); 
          
       }
 </script> 
